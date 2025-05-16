@@ -23,13 +23,15 @@ class ResidentsDb:
     def get_id_from_name(self, name):
         """Get id of resident from name."""
         data = self.cursor.execute(
-            "SELECT id FROM userdata WHERE Name ={};".format(name))
+            "SELECT id FROM userdata WHERE Name ={};".format(name)
+        )
         self.conn.commit()
         return data
 
 
 def fetch_version(request):
     """Fetch verison of bgmi."""
-    version = requests.get("https://pypi.python.org/pypi/bgmi/json",
-                           verify=False).json()["info"]["version"]
+    version = requests.get(
+        "https://pypi.python.org/pypi/bgmi/json", verify=False
+    ).json()["info"]["version"]
     return version
