@@ -61,8 +61,7 @@ def main(options: dict = {}) -> str:
 
     if type(value) != str:
         raise Exception()
-    else:
-        value = iter(value)
+    value = iter(value)
 
     sorted(value, key=lambda k: len(k))
 
