@@ -38,7 +38,11 @@ class OrderProcessor:
         # missing return -> implicitly returns None inconsistently
 
     def is_valid(self, order):
-        if order["status"] == "paid" or order["status"] == "shipped" or order["status"] == "done":
+        if (
+            order["status"] == "paid"
+            or order["status"] == "shipped"
+            or order["status"] == "done"
+        ):
             return True
         return False
 
